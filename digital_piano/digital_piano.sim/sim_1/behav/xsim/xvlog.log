@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sources_1/new/Buzzer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Buzzer
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sim_1/new/Buzzer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Buzzer_tb

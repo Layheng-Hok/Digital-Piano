@@ -6,7 +6,7 @@ module Buzzer (
     input wire key_on,
     input wire key_off,
     input wire [3:0] note,  // note (Input 1 outputs a signal for 'do, 2 for 're, 3 for 'mi, 4, and so on)
-    output reg speaker     // buzzer output signal
+    output speaker     // buzzer output signal
     );
 
     localparam IDLE = 1'b0, BUZZ = 1'b1;
@@ -16,7 +16,7 @@ module Buzzer (
     reg counter_en;
     reg [31:0] counter_max;
     reg [31:0] counter;
-  //  reg pwm;
+    reg pwm;
    
     // frequencies of do, re, mi, fa, so, la, si
     // obtain the ratio of how long the buzzer should be active in one second
@@ -31,12 +31,12 @@ module Buzzer (
     // clock divider
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            speaker <= 1'b0;
+            pwm <= 1'b0;
             counter <= 32'd0;
         end
         else begin
             if (counter == counter_max) begin
-                speaker <= ~speaker;
+                pwm <= ~pwm;
                 counter <= 32'd0;
             end
             else if (counter_en) begin
@@ -61,7 +61,8 @@ module Buzzer (
                         if (key_on) begin
                             state <= BUZZ;
                             case (note)
-                                4'd1: counter_max <= 32'd10 - 1; // hard code value for simulation purpose
+                                // hard code value for simulation purpose
+                                4'd1: counter_max <= 32'd10 - 1; 
                                 4'd2: counter_max <= 32'd20 - 1;
                                 4'd3: counter_max <= 32'd30 - 1;
                                 4'd4: counter_max <= 32'd40 - 1;
@@ -69,6 +70,14 @@ module Buzzer (
                                 4'd6: counter_max <= 32'd60 - 1;
                                 4'd7: counter_max <= 32'd70 - 1;
                                 default: counter_max <=  32'd10 - 1; 
+                                // 4'd1: counter_max <= notes[1]; 
+                                // 4'd2: counter_max <= notes[2];
+                                // 4'd3: counter_max <= notes[3];
+                                // 4'd4: counter_max <= notes[4];
+                                // 4'd5: counter_max <= notes[5];
+                                // 4'd6: counter_max <= notes[6];
+                                // 4'd7: counter_max <= notes[7];
+                                // default: counter_max <=  notes[1]; 
                             endcase
                         end
                         else
@@ -90,6 +99,6 @@ module Buzzer (
         end    
     end
 
-   // assign speaker = pwm;  // output a PWM signal to the buzzer
+    assign speaker = pwm;  // output a PWM signal to the buzzer
 
 endmodule

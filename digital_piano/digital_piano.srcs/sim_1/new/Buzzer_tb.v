@@ -2,7 +2,6 @@
 `define clk_period 20
 
 module Buzzer_tb();
-
     reg clk;
     reg rst_n;
     reg key_on;
@@ -130,7 +129,5 @@ module Buzzer_tb();
         key_off = 1'b0;
 
         $stop;
-
-    end
-    
+    end    
 endmodule

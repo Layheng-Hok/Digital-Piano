@@ -20,6 +20,8 @@ module Buzzer (
    
     // frequencies of do, re, mi, fa, so, la, si
     // obtain the ratio of how long the buzzer should be active in one second
+    // multiply each note by 2 for higher octave
+    // divide each note by 2 for lower octave
     assign notes[1] = 381680;
     assign notes[2] = 340136;
     assign notes[3] = 303030;
@@ -39,12 +41,10 @@ module Buzzer (
                 pwm <= ~pwm;
                 counter <= 32'd0;
             end
-            else if (counter_en) begin
+            else if (counter_en)
                 counter <= counter + 32'd1;
-            end
-            else begin
+            else 
                 counter <= 32'd0;
-            end
         end
     end
     
@@ -87,8 +87,8 @@ module Buzzer (
                     begin
                         counter_en <= 1'b1;
                         if (key_off) begin
-                            state <= IDLE;
                             counter_en <= 1'b0;
+                            state <= IDLE;
                         end
                         else
                             state <= BUZZ;

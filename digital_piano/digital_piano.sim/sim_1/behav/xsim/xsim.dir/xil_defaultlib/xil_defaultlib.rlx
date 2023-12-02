@@ -3,5 +3,7 @@
 Dec 15 2017
 21:07:18
 D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
-D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sim_1/new/Buzzer_tb.v,1701507525,verilog,,,,Buzzer_tb,,,,,,,,
-D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sources_1/new/Buzzer.v,1701509403,verilog,,D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sim_1/new/Buzzer_tb.v,,Buzzer,,,,,,,,
+D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sim_1/new/Buzzer_tb.v,1701530062,verilog,,,,Buzzer_tb,,,,,,,,
+D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sim_1/new/Key_tb.v,1701530255,verilog,,,,Key_tb,,,,,,,,
+D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sources_1/new/Buzzer.v,1701526441,verilog,,D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sim_1/new/Buzzer_tb.v,,Buzzer,,,,,,,,
+D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sources_1/new/Key.v,1701530087,verilog,,D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sim_1/new/Key_tb.v,,Key,,,,,,,,

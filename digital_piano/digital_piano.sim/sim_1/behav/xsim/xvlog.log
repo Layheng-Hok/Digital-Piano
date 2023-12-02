@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sources_1/new/KeyController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeyController
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SUSTech/Year 2 Semester 1/CS207 - Digital Logic/Digital-Piano/digital_piano/digital_piano.srcs/sim_1/new/KeyController_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeyController_tb

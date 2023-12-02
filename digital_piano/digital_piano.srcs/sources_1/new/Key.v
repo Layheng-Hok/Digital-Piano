@@ -2,9 +2,9 @@
 `define MAX_COUNT 10
 
 module Key(
-    input clk,
-    input rst_n,
-    input key_note,
+    input wire clk,
+    input wire rst_n,
+    input wire key_note,
     output reg key_on,
     output reg key_off
     );

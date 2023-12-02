@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-`define clk_period 20
+`define clk_period 40
 
 module Key_tb();
     reg clk;

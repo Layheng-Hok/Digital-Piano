@@ -6,7 +6,7 @@ module Buzzer (
     input wire key_on,
     input wire key_off,
     input wire [3:0] note,  // note (Input 1 outputs a signal for 'do, 2 for 're, 3 for 'mi, 4, and so on)
-    output speaker     // buzzer output signal
+    output wire speaker     // buzzer output signal
     );
 
     localparam IDLE = 1'b0, BUZZ = 1'b1;

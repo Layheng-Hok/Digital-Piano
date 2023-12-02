@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-`define clk_period 20
+`define clk_period 40
 
 module Buzzer_tb();
     reg clk;
@@ -30,10 +30,10 @@ module Buzzer_tb();
         #(`clk_period);
         rst_n = 1'b1;
 
-        // test note do
+        // test note 1
         #(`clk_period);
         key_on = 1'b1;
-        note = 4'd1;  // play do
+        note = 4'd1;  // play note 1
 
         #(`clk_period);
         key_on = 1'b0;
@@ -44,10 +44,10 @@ module Buzzer_tb();
         #(`clk_period);
         key_off = 1'b0;
 
-        // test note re
+        // test note 2
         #(`clk_period);
         key_on = 1'b1;
-        note = 4'd2;  // play re
+        note = 4'd2;  // play note 2
 
         #(`clk_period);
         key_on = 1'b0;
@@ -58,10 +58,10 @@ module Buzzer_tb();
         #(`clk_period);
         key_off = 1'b0;
 
-        // test note mi
+        // test note 3
         #(`clk_period);
         key_on = 1'b1;
-        note = 4'd3;  // play mi
+        note = 4'd3;  // play note 3
 
         #(`clk_period);
         key_on = 1'b0;
@@ -72,10 +72,10 @@ module Buzzer_tb();
         #(`clk_period);
         key_off = 1'b0;
 
-        // test note fa
+        // test note 4
         #(`clk_period);
         key_on = 1'b1;
-        note = 4'd4;  // play fa
+        note = 4'd4;  // play note 4
 
         #(`clk_period);
         key_on = 1'b0;
@@ -86,10 +86,10 @@ module Buzzer_tb();
         #(`clk_period);
         key_off = 1'b0;
 
-        // test note so
+        // test note 5
         #(`clk_period);
         key_on = 1'b1;
-        note = 4'd5;  // play so
+        note = 4'd5;  // play note 5
 
         #(`clk_period);
         key_on = 1'b0;
@@ -100,10 +100,10 @@ module Buzzer_tb();
         #(`clk_period);
         key_off = 1'b0;
 
-        // test note la
+        // test note 6
         #(`clk_period);
         key_on = 1'b1;
-        note = 4'd6;  // play la
+        note = 4'd6;  // play note 6
 
         #(`clk_period);
         key_on = 1'b0;
@@ -114,10 +114,10 @@ module Buzzer_tb();
         #(`clk_period);
         key_off = 1'b0;
 
-        // test note si
+        // test note 7
         #(`clk_period);
         key_on = 1'b1;
-        note = 4'd7;  // play si
+        note = 4'd7;  // play note 7
 
         #(`clk_period);
         key_on = 1'b0;

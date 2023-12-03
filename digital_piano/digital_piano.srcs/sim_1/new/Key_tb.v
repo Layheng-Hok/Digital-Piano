@@ -5,15 +5,15 @@ module Key_tb();
     reg clk;
     reg rst_n;
     reg key_note;
-    wire key_on;
-    wire key_off;
+    wire key_on_out;
+    wire key_off_out;
 
     Key DUT (
         .clk(clk),
         .rst_n(rst_n),
         .key_note(key_note),
-        .key_on(key_on),
-        .key_off(key_off)
+        .key_on_out(key_on_out),
+        .key_off_out(key_off_out)
     );
 
     initial clk = 1'b1;

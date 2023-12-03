@@ -3,9 +3,9 @@
 module Buzzer (
     input wire clk,         // clock signal
     input wire rst_n,
-    input wire key_on,
-    input wire key_off,
-    input wire [3:0] note,  // note (Input 1 outputs a signal for 'do, 2 for 're, 3 for 'mi, 4, and so on)
+    input wire key_on_in,
+    input wire key_off_in,
+    input wire [3:0] note_in,  // note (Input 1 outputs a signal for 'do, 2 for 're, 3 for 'mi, 4, and so on)
     output wire speaker     // buzzer output signal
     );
 
@@ -58,9 +58,9 @@ module Buzzer (
             case (state)
                 IDLE:
                     begin
-                        if (key_on) begin
+                        if (key_on_in) begin
                             state <= BUZZ;
-                            case (note)
+                            case (note_in)
                                 // hard code value for simulation purpose
                                 4'd1: counter_max <= 32'd10 - 1; 
                                 4'd2: counter_max <= 32'd20 - 1;
@@ -86,7 +86,7 @@ module Buzzer (
                 BUZZ:
                     begin
                         counter_en <= 1'b1;
-                        if (key_off) begin
+                        if (key_off_in) begin
                             counter_en <= 1'b0;
                             state <= IDLE;
                         end

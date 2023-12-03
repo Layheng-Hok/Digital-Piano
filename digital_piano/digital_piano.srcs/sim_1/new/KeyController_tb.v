@@ -7,7 +7,7 @@ module KeyController_tb();
     reg [6:0] key_notes;
     wire key_on_out;
     wire key_off_out;
-    wire [3:0] note;
+    wire [3:0] note_out;
 
     KeyController DUT (
         .clk(clk),
@@ -15,7 +15,7 @@ module KeyController_tb();
         .key_notes(key_notes),
         .key_on_out(key_on_out),
         .key_off_out(key_off_out),
-        .note(note)
+        .note_out(note_out)
     );
 
     initial clk = 1'b1;

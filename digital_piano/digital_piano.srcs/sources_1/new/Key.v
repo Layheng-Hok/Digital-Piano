@@ -5,8 +5,8 @@ module Key(
     input wire clk,
     input wire rst_n,
     input wire key_note,
-    output reg key_on,
-    output reg key_off
+    output reg key_on_out,
+    output reg key_off_out
     );
 
     localparam IDLE = 2'b00, PRESS = 2'b01, PRESSED = 2'b10, RELEASE = 2'b11;
@@ -49,15 +49,15 @@ module Key(
         if (!rst_n) begin
             state <= IDLE;
             counter_en <= 1'b0;
-            key_on <= 1'b0;
-            key_off <= 1'b0;
+            key_on_out <= 1'b0;
+            key_off_out <= 1'b0;
         end
         else begin
             case (state)
                 IDLE:
                     begin
-                        key_on <= 1'b0;
-                        key_off <= 1'b0;
+                        key_on_out <= 1'b0;
+                        key_off_out <= 1'b0;
                         if (neg_edge) begin
                             counter_en <= 1'b1;
                             state <= PRESS;
@@ -68,7 +68,7 @@ module Key(
                 PRESS:
                     begin
                         if (counter == `MAX_COUNT) begin
-                            key_on <= 1'b1;
+                            key_on_out <= 1'b1;
                             counter_en <= 1'b0;
                             state <= PRESSED;
                         end
@@ -81,7 +81,7 @@ module Key(
                     end
                 PRESSED:
                     begin
-                        key_on <= 1'b0; // output one clock pulse, change later
+                        key_on_out <= 1'b0; // output one clock pulse, change later
                         if (pos_edge) begin
                             counter_en <= 1'b1;
                             state <= RELEASE;      
@@ -92,7 +92,7 @@ module Key(
                 RELEASE:
                     begin
                         if (counter == `MAX_COUNT) begin
-                            key_off <= 1'b1;
+                            key_off_out <= 1'b1;
                             counter_en <= 1'b0;
                             state <= IDLE;
                         end
@@ -107,8 +107,8 @@ module Key(
                     begin
                         state <= IDLE;
                         counter_en <= 1'b0;
-                        key_on <= 1'b0;
-                        key_off <= 1'b0;
+                        key_on_out <= 1'b0;
+                        key_off_out <= 1'b0;
                     end
             endcase
         end

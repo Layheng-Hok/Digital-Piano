@@ -22,13 +22,13 @@ module Buzzer (
     // obtain the ratio of how long the buzzer should be active in one second
     // multiply each note by 2 for higher octave
     // divide each note by 2 for lower octave
-    assign notes[1] = 381680;
-    assign notes[2] = 340136;
-    assign notes[3] = 303030;
-    assign notes[4] = 285714;
-    assign notes[5] = 255102;
-    assign notes[6] = 227273;
-    assign notes[7] = 202429;
+    assign notes[1] = 32'd381680;
+    assign notes[2] = 32'd340136;
+    assign notes[3] = 32'd303030;
+    assign notes[4] = 32'd285714;
+    assign notes[5] = 32'd255102;
+    assign notes[6] = 32'd227273;
+    assign notes[7] = 32'd202429;
 
     // clock divider
     always @(posedge clk or negedge rst_n) begin
@@ -61,23 +61,23 @@ module Buzzer (
                         if (key_on_in) begin
                             state <= BUZZ;
                             case (note_in)
+                                4'd1: counter_max <= notes[1]; 
+                                4'd2: counter_max <= notes[2];
+                                4'd3: counter_max <= notes[3];
+                                4'd4: counter_max <= notes[4];
+                                4'd5: counter_max <= notes[5];
+                                4'd6: counter_max <= notes[6];
+                                4'd7: counter_max <= notes[7];
+                                default: counter_max <= notes[1];
                                 // hard code value for simulation purpose
-                                4'd1: counter_max <= 32'd10 - 1; 
-                                4'd2: counter_max <= 32'd20 - 1;
-                                4'd3: counter_max <= 32'd30 - 1;
-                                4'd4: counter_max <= 32'd40 - 1;
-                                4'd5: counter_max <= 32'd50 - 1;
-                                4'd6: counter_max <= 32'd60 - 1;
-                                4'd7: counter_max <= 32'd70 - 1;
-                                default: counter_max <=  32'd10 - 1; 
-                                // 4'd1: counter_max <= notes[1]; 
-                                // 4'd2: counter_max <= notes[2];
-                                // 4'd3: counter_max <= notes[3];
-                                // 4'd4: counter_max <= notes[4];
-                                // 4'd5: counter_max <= notes[5];
-                                // 4'd6: counter_max <= notes[6];
-                                // 4'd7: counter_max <= notes[7];
-                                // default: counter_max <=  notes[1]; 
+                                // 4'd1: counter_max <= 32'd10 - 1; 
+                                // 4'd2: counter_max <= 32'd20 - 1;
+                                // 4'd3: counter_max <= 32'd30 - 1;
+                                // 4'd4: counter_max <= 32'd40 - 1;
+                                // 4'd5: counter_max <= 32'd50 - 1;
+                                // 4'd6: counter_max <= 32'd60 - 1;
+                                // 4'd7: counter_max <= 32'd70 - 1;
+                                // default: counter_max <= 32'd10 - 1;  
                             endcase
                         end
                         else

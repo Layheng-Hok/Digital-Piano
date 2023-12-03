@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-`define MAX_COUNT 10
+`define MAX_COUNT 1_000_000 - 1 // 20ms / 20ns - 1, change to 10 for simulation
+//`define MAX_COUNT 10
 
 module Key(
     input wire clk,
@@ -9,7 +10,7 @@ module Key(
     output reg key_off_out
     );
 
-    localparam IDLE = 2'b00, PRESS = 2'b01, PRESSED = 2'b10, RELEASE = 2'b11;
+    localparam IDLE = 2'b00, FILTER0 = 2'b01, DOWN = 2'b10, FILTER1 = 2'b11;
 
     reg [1:0] state;
     wire pos_edge;  // record edge value for switching status
@@ -60,36 +61,36 @@ module Key(
                         key_off_out <= 1'b0;
                         if (neg_edge) begin
                             counter_en <= 1'b1;
-                            state <= PRESS;
+                            state <= FILTER0;
                         end
                         else
                             state <= IDLE;
                     end
-                PRESS:
+                FILTER0:
                     begin
                         if (counter == `MAX_COUNT) begin
                             key_on_out <= 1'b1;
                             counter_en <= 1'b0;
-                            state <= PRESSED;
+                            state <= DOWN;
                         end
                         else if (pos_edge) begin
                             counter_en <= 1'b0;
                             state <= IDLE;
                         end
                         else
-                            state <= PRESS;
+                            state <= FILTER0;
                     end
-                PRESSED:
+                DOWN:
                     begin
                         key_on_out <= 1'b0; // output one clock pulse, change later
                         if (pos_edge) begin
                             counter_en <= 1'b1;
-                            state <= RELEASE;      
+                            state <= FILTER1;      
                         end
                         else
-                            state <= PRESSED;
+                            state <= DOWN;
                     end
-                RELEASE:
+                FILTER1:
                     begin
                         if (counter == `MAX_COUNT) begin
                             key_off_out <= 1'b1;
@@ -98,10 +99,10 @@ module Key(
                         end
                         else if (neg_edge) begin
                             counter_en <= 1'b0;
-                            state <= PRESSED;
+                            state <= DOWN;
                         end
                         else
-                            state <= RELEASE;
+                            state <= FILTER1;
                     end
                 default:
                     begin

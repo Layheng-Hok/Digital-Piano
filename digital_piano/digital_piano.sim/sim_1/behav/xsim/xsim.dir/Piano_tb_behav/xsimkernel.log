@@ -2,3 +2,6 @@ Running: xsim.dir/Piano_tb_behav/xsimk.exe -simmode gui -wdb Piano_tb_behav.wdb 
 Design successfully loaded
 Design Loading Memory Usage: 12080 KB (Peak: 12080 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 13244 KB (Peak: 13244 KB)
+Simulation CPU Usage: 15 ms

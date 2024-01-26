@@ -31,7 +31,7 @@ Electronic Piano Learning Machine is a piano project implemented in Verilog base
 + Save user's highest score in learning mode (support up to 3 users)
 + Support octave adjustment in every mode, including high, normal, and low ocatave, hence able to output 7×3 = 21 different music notes
 + Support speed adjustment in autoplay mode
-+ Support LED and VGA output for intuitive and convenient interaction with the FPGA board
++ Support VGA, LED, and seven-segment display output for intuitive and convenient interaction with the FPGA board
 
 # Contributors
 + [Liu Gan](https://github.com/GanLiuuuu): autoplay mode and learning mode

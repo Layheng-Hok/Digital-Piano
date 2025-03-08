@@ -9,20 +9,7 @@ Electronic Piano Learning Machine is a piano project implemented in Verilog base
 # Preview
 
 ### Control Diagram of FPGA Board
-
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <img src="https://github.com/Layheng-Hok/Digital-Piano/blob/main/resources/control.png" width = "800">
-  </div>
-</div>
-
-### FPGA Board Connected to a Monitor and a Buzzer
-
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <img src="https://github.com/Layheng-Hok/Digital-Piano/blob/main/resources/piano.png" width = "800">
-  </div>
-</div>
+<img src="https://github.com/Layheng-Hok/Digital-Piano/blob/main/resources/control.png">
 
 ### Demo
 https://github.com/user-attachments/assets/e98288dc-9774-453f-8db2-3790fe4e0adb

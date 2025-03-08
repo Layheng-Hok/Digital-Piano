@@ -24,6 +24,9 @@ Electronic Piano Learning Machine is a piano project implemented in Verilog base
   </div>
 </div>
 
+### Demo
+https://github.com/user-attachments/assets/e98288dc-9774-453f-8db2-3790fe4e0adb
+
 # Functionalities
 + Free mode: play any of the 7 notes (do, re, mi, fa, so, la, and si) freely
 + Autoplay mode: listen to any songs from the music library (Twinkle Twinkle Little Star, Two Tigers, and Ode to Joy)
@@ -34,7 +37,7 @@ Electronic Piano Learning Machine is a piano project implemented in Verilog base
 + Support VGA, LED, and seven-segment display output for intuitive and convenient interaction with the FPGA board
 
 # Contributors
-+ [Liu Gan](https://github.com/GanLiuuuu): autoplay mode and learning mode
++ [Liu Gan](https://github.com/gumlau): autoplay mode and learning mode
 + [Hok Layheng](https://github.com/Layheng-Hok): free mode and VGA
 + [Zerhouni Khal Jaouhara](https://github.com/Jouwy): octave adjustment, code specification, and report
   
